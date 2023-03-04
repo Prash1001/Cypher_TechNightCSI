@@ -8,12 +8,68 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="NGO_registration.css">
-        <h1>NGO registration</h1>
+       
     </head>
     <body>
-        
+        <br>
+        <section class="container">
+        <main>
+            <h1>NGO registration</h1>
 
-        
+        <form>
+            <label for="name">NGO Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter NGO name" required>
+
+            <label for="id">NGO Registration ID issued By Government</label>
+            <input type="text" id="id" name="id" placeholder="Enter NGO ID issued By Government" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone Number" required>
+
+            <label for="phone">Alternate phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone Number" required>
+
+            <div class="input-box address">
+                <label>Address</label>
+                <input type="text" placeholder="Enter street address" required />
+                <input type="text" placeholder="Enter street address line 2" required />
+                <div class="column">
+                  <div class="select-box">
+                    <select>
+                      <option hidden>Country</option>
+                      <option>America</option>
+                      <option>Japan</option>
+                      <option>India</option>
+                      <option>Nepal</option>
+                    </select>
+                  </div>
+                  <input type="text" placeholder="Enter your city" required />
+                </div>
+                <div class="column">
+                  <input type="text" placeholder="Enter your region" required />
+                  <input type="number" placeholder="Enter postal code" required />
+                </div>
+              </div>
+            
+            <label for="domain">Domain</label>
+            <select id="domain" name="domain" required>
+                <option value="" selected disabled>Select your Domain</option>
+                <option value="education">education</option>
+                <option value="health">health</option>
+                <option value="human trafficing">human trafficing</option>
+                <option value="animal protection">animal protection</option>
+            </select>
+
+           
+                <button>Submit</button>
+                
+
+         </form>
+         </main>
+        </section>
         <script src="" async defer></script>
     </body>
 </html>

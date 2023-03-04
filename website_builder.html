@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website Editor</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class="wrapper">
+      <aside>
+        <h2>Page Content</h2>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </aside>
+      
+      <main>
+        <h1>Welcome to My Website</h1>
+        <section id="about">
+          <h2>About Us</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nulla et ipsum ultricies lacinia. Fusce nec ante euismod, dignissim turpis nec, lacinia tortor. Integer dapibus tellus sit amet enim tincidunt, ut pharetra quam fringilla.</p>
+        </section>
+        
+        <section id="services">
+          <h2>Our Services</h2>
+          <ul>
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+          </ul>
+        </section>
+        
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
+      
+      <div id="preview">
+        <h2>Preview</h2>
+        <iframe src="preview.html"></iframe>
+      </div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+    
+  </body>
+</html>
