@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ngoModel
+from .models import ngoModel,volunteerModel
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 @csrf_exempt
@@ -21,10 +21,14 @@ def ngoForm(request):
         savedata.save()
     return render(request,"ngo_reg.html")
 
+
+
+@csrf_exempt
 def volunteerForm(request):
     if request.method=='POST':
         name=request.POST.get("name")
         email=request.POST.get("email")
+        phone=request.POST.get("phone")
         dob=request.POST.get("dob")
         gender=request.POST.get("gender")
         address1=request.POST.get("address1")
@@ -35,6 +39,6 @@ def volunteerForm(request):
         postalcode=request.POST.get("Postalcode")
         Qualification=request.POST.get("Qualification")
         Domain=request.POST.get("Domain")
-        # savedata=ngoModel(name=name,ngo_email=email,phone_no=phone,alt_phone_no=alt_phone,address_street1=street1,address_street2=street2,Country=country,City=city,Region=region,Postal_code=postalcode,ngo_domain=domain)
-        # savedata.save()
+        savedata=volunteerModel(volunteer_name=name,volunteer_email=email,phonenumber=phone,dob=dob,gender=gender,address1=address1,address2=address2,Country=country,city=city,region=region,postalcode=postalcode,education=Qualification,volunteer_domain=Domain)
+        savedata.save()
     return render(request,"volunteer_reg.html")
