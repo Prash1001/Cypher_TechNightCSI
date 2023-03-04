@@ -4,10 +4,11 @@ body {
     min-height: 20px;
     display: flex;
     flex-direction: column;
+    background-color: #A1C298;
 }
 nav {
-    background-color: #333;
-    color: #fff;
+    background-color:  #C6EBC5;
+    color: blacks;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +25,7 @@ nav ul {
 }
 
 nav a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     padding: 10px;
     border-radius: 10%;
@@ -43,14 +44,14 @@ main {
     flex: 1;
 }
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #FBF2CF;
+    color: black;
     padding: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: fixed;
+    position:relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -59,10 +60,72 @@ main {
     margin: 0;
 }
 .footer a {
-    color: #fff;
+    color: black;
     text-decoration: none;
 }
 .footer a:hover {
     text-decoration: underline;
 }
-
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-content h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .card-content a {
+    display: inline-block;
+    background-color: #0077FF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  .image {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image img {
+    display: block;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .imag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+main{
+    padding: 3%;
+}  
