@@ -1,4 +1,40 @@
 from django.shortcuts import render
-
+from .models import ngoModel
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
-# def form():
+@csrf_exempt
+def ngoForm(request):
+    if request.method=='POST':
+        name=request.POST.get("name")
+        ngoid=request.POST.get("id")
+        email=request.POST.get("email")
+        phone=request.POST.get("phone")
+        alt_phone=request.POST.get("altphone")
+        street1=request.POST.get("street1")
+        street2=request.POST.get("street2")
+        country=request.POST.get("Country")
+        city=request.POST.get("City")
+        region=request.POST.get("Region")
+        postalcode=request.POST.get("Postalcode")
+        domain=request.POST.get("domain")
+        savedata=ngoModel(ngo_name=name,ngo_reg_id=ngoid,ngo_email=email,phone_no=phone,alt_phone_no=alt_phone,address_street1=street1,address_street2=street2,Country=country,City=city,Region=region,Postal_code=postalcode,ngo_domain=domain)
+        savedata.save()
+    return render(request,"ngo_reg.html")
+
+def volunteerForm(request):
+    if request.method=='POST':
+        name=request.POST.get("name")
+        email=request.POST.get("email")
+        dob=request.POST.get("dob")
+        gender=request.POST.get("gender")
+        address1=request.POST.get("address1")
+        address2=request.POST.get("address2")
+        country=request.POST.get("Country")
+        city=request.POST.get("City")
+        region=request.POST.get("Region")
+        postalcode=request.POST.get("Postalcode")
+        Qualification=request.POST.get("Qualification")
+        Domain=request.POST.get("Domain")
+        # savedata=ngoModel(name=name,ngo_email=email,phone_no=phone,alt_phone_no=alt_phone,address_street1=street1,address_street2=street2,Country=country,City=city,Region=region,Postal_code=postalcode,ngo_domain=domain)
+        # savedata.save()
+    return render(request,"volunteer_reg.html")
