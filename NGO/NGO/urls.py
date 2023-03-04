@@ -6,5 +6,6 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ngoform/',views.ngoForm),
-    path('volunteerform/',views.volunteerForm)
+    path('volunteerform/',views.volunteerForm),
+    path('loginform/',views.loginForm)
 ]

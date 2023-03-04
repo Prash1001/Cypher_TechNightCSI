@@ -31,3 +31,11 @@ class volunteerModel(models.Model):
     postalcode=models.IntegerField()
     education=models.CharField(max_length=50)
     volunteer_domain=models.CharField(max_length=50)
+
+
+class loginModel(models.Model):
+    user_name=models.CharField(max_length=50)
+    password=models.CharField(max_length=50)
+
+class randomModel(models.Model):
+    passw=models.CharField(max_length=10)
