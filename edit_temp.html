@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <title>Editable Template</title>
   <style>
-    /* Define the editable sections */
+
     .editable {
       border: 1px solid gray;
       padding: 10px;
       margin-bottom: 20px;
     }
-    /* Style the save button */
+
     #save-button {
       background-color: green;
       color: white;
@@ -134,43 +134,43 @@ main {
   <button id="save-button">Save Changes</button>
 
   <script>
-    // Save button event listener
+
     document.getElementById('save-button').addEventListener('click', function() {
-      // Get all editable sections
+
       var sections = document.getElementsByClassName('editable');
-      // Loop through each section and remove any HTML tags other than <br> and <a>
+
       for (var i = 0; i < sections.length; i++) {
         var section = sections[i];
         var text = section.innerHTML.replace(/<(?!br|a).*?>/g, '');
         section.innerHTML = text;
       }
-      // Save the edited content to the server (code not included)
+
       alert('Changes saved successfully!');
     });
     document.getElementById('save-button').addEventListener('click', function() {
-      // Get all editable sections
+
       var sections = document.getElementsByClassName('editable');
-      // Loop through each section and remove any HTML tags other than <br> and <a>
+
       for (var i = 0; i < sections.length; i++) {
         var section = sections[i];
         var text = section.innerHTML.replace(/<(?!br|a).*?>/g, '');
         section.innerHTML = text;
       }
-      // Get the HTML content
+
       var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-      // Create a blob with the HTML content
+
       var blob = new Blob([html], {type: "text/html;charset=utf-8"});
-      // Create a URL for the blob
+
       var url = URL.createObjectURL(blob);
-      // Create a link element to trigger the download
+
       var link = document.createElement("a");
       link.href = url;
       link.download = "edited_page.html";
-      // Trigger the download
+
       link.click();
-      // Free the URL object
+
       URL.revokeObjectURL(url);
-      // Restore original content
+
       location.reload();
     });
     
