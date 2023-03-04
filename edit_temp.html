@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editable Template</title>
+  <style>
+    /* Define the editable sections */
+    .editable {
+      border: 1px solid gray;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    /* Style the save button */
+    #save-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+      body {
+  margin: 0;
+  padding: 0;
+  min-height: 20px;
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  text-overflow: clip ;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10%;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin: 1% ;
+}
+main {
+  flex: 1;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer p {
+  margin: 0;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+      
+  </style>
+</head>
+<body>
+  <nav> 
+    <h1>Web_Name</h1>
+    <ul>
+        <a href="home_page_ngo.html">Home</a>
+        <a href="contact_us_ngo.html">Contact Us</a>
+        <a href="sign_out_message.html">Sign Out</a>
+    </ul>
+</nav>
+<main>
+
+</main>
+
+<footer class="footer">
+    <p>Copyright © 2023 
+        <a href="home_page.html">My Website</a>
+    </p>
+    <p>All Rights Reserved.</p>
+</footer>
+    
+  
+
+  
+
+  <div class="editable" contenteditable>
+    <h1>Welcome to our website!</h1>
+    <p>Edit this text. </p>
+    <ul>
+      <li>1)</li>
+      <li>2)</li>
+      <li>3)</li>
+      <li>4)</li>
+    </ul>
+  </div>
+
+  <div class="editable" contenteditable>
+    <h2>About us</h2>
+    <p>This is another editable paragraph. You can change the text but nothing else.</p>
+  </div>
+
+  <button id="save-button">Save Changes</button>
+
+  <script>
+    // Save button event listener
+    document.getElementById('save-button').addEventListener('click', function() {
+      // Get all editable sections
+      var sections = document.getElementsByClassName('editable');
+      // Loop through each section and remove any HTML tags other than <br> and <a>
+      for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var text = section.innerHTML.replace(/<(?!br|a).*?>/g, '');
+        section.innerHTML = text;
+      }
+      // Save the edited content to the server (code not included)
+      alert('Changes saved successfully!');
+    });
+    document.getElementById('save-button').addEventListener('click', function() {
+      // Get all editable sections
+      var sections = document.getElementsByClassName('editable');
+      // Loop through each section and remove any HTML tags other than <br> and <a>
+      for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var text = section.innerHTML.replace(/<(?!br|a).*?>/g, '');
+        section.innerHTML = text;
+      }
+      // Get the HTML content
+      var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      // Create a blob with the HTML content
+      var blob = new Blob([html], {type: "text/html;charset=utf-8"});
+      // Create a URL for the blob
+      var url = URL.createObjectURL(blob);
+      // Create a link element to trigger the download
+      var link = document.createElement("a");
+      link.href = url;
+      link.download = "edited_page.html";
+      // Trigger the download
+      link.click();
+      // Free the URL object
+      URL.revokeObjectURL(url);
+      // Restore original content
+      location.reload();
+    });
+    
+  </script>
+
+</body>
+</html>
